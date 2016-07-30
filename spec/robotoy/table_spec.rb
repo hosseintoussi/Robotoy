@@ -11,4 +11,14 @@ describe Robotoy::Table do
       end
     end
   end
+
+  describe "#validate_next_position" do
+    context "when validating next position on the table" do
+      it "raises error if position is invalid" do
+        table = described_class.new
+
+        expect{ table.validate_next_position(x: 6) }.to raise_error
+      end
+    end
+  end
 end

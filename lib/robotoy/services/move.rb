@@ -1,7 +1,6 @@
 module Robotoy
   module Services
     class Move
-
       def initialize(robot:, table:, x_range: 1, y_range: 1)
         @robot = robot
         @table = table

@@ -1,7 +1,6 @@
 module Robotoy
   module Services
     class Orientation
-
       def initialize(robot:)
         @orients = [:north, :east, :south, :west]
         @robot = robot

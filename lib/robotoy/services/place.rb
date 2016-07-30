@@ -1,7 +1,6 @@
 module Robotoy
   module Services
     class Place
-
       def initialize(robot:, table:, orientation:)
         @robot = robot
         @table = table

@@ -1,7 +1,6 @@
 module Robotoy
   module Services
     class Report
-
       def initialize(robot:)
         @robot = robot
       end

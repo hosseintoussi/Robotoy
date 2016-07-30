@@ -5,4 +5,3 @@ module Robotoy
   class NotPlacedError < Errors; end
   class NotValidMethodError < Errors; end
 end
-

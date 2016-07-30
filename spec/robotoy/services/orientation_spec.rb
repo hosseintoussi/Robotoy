@@ -22,4 +22,32 @@ describe Robotoy::Services::Orientation do
       end
     end
   end
+
+  describe "#right" do
+    context "when right called on orientation" do
+      it "rotates right" do
+        robot = double(Robotoy::Robot)
+        allow(robot).to receive(:orientation)
+        orient = described_class.new(robot: robot)
+
+        expect(robot).to receive(:orientation=).with(:east)
+
+        orient.right
+      end
+    end
+  end
+
+  describe "#left" do
+    context "when left called on orientation" do
+      it "rotates left" do
+        robot = double(Robotoy::Robot)
+        allow(robot).to receive(:orientation)
+        orient = described_class.new(robot: robot)
+
+        expect(robot).to receive(:orientation=).with(:west)
+
+        orient.left
+      end
+    end
+  end
 end

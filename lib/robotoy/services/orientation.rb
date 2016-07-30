@@ -8,6 +8,14 @@ module Robotoy
         order_orients
       end
 
+      def right
+        @robot.orientation = @orients.rotate[0]
+      end
+
+      def left
+        @robot.orientation = @orients.rotate(-1)[0]
+      end
+
       private
 
       def order_orients

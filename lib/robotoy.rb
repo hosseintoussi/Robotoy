@@ -1,6 +1,7 @@
 require "robotoy/version"
 require "robotoy/services/orientation"
 require "robotoy/services/move"
+require "robotoy/services/place"
 require "robotoy/table"
 require "robotoy/robot"
 

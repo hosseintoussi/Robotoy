@@ -35,9 +35,7 @@ describe Robotoy::Services::Move do
         table = double(Robotoy::Table)
         move = described_class.new(robot: robot, table: table)
 
-        expect(move).to receive(:method_missing)
-
-        move.perform
+        expect{ move.perform }.to raise_error(Robotoy::NotValidMethodError)
       end
     end
   end

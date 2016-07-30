@@ -54,4 +54,17 @@ describe Robotoy::Services::Orientation do
       end
     end
   end
+
+  describe "#validate_orientation" do
+    context "when orientation is invalid" do
+      it "raises not valid orientation error" do
+        robot = double(Robotoy::Robot)
+        allow(robot).to receive(:orientation)
+
+        orient = described_class.new(robot: robot)
+
+        expect{ orient.validate_orientation(orientation: :test) }.to raise_error(Robotoy::NotValidOrientationError)
+      end
+    end
+  end
 end

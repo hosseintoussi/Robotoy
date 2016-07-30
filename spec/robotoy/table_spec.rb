@@ -17,7 +17,7 @@ describe Robotoy::Table do
       it "raises error if position is invalid" do
         table = described_class.new
 
-        expect{ table.validate_next_position(x: 6) }.to raise_error
+        expect{ table.validate_next_position(x: 6) }.to raise_error(Robotoy::NotValidMoveError)
       end
     end
   end

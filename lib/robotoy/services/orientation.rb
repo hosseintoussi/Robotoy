@@ -16,6 +16,11 @@ module Robotoy
         @robot.orientation = @orients.rotate(-1)[0]
       end
 
+      def validate_orientation(orientation:)
+        raise NotValidOrientationError unless @orients.include?(orientation.downcase)
+      end
+
+
       private
 
       def order_orients

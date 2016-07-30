@@ -19,6 +19,7 @@ module Robotoy
 
       def validate_placement(x, y, orientation)
         @table.validate_next_position(x: x, y: y)
+        @orientation.validate_orientation(orientation: orientation)
       end
     end
   end

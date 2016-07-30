@@ -8,6 +8,7 @@ describe Robotoy::Services::Place do
         allow(table).to receive(:validate_next_position)
         robot = double(Robotoy::Robot)
         orientation = double(Robotoy::Services::Orientation)
+        allow(orientation).to receive(:validate_orientation)
 
         place = described_class.new(robot: robot, table: table, orientation: orientation)
 

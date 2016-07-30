@@ -36,7 +36,7 @@ module Robotoy
       end
 
       def method_missing(name, *args)
-        puts "Method #{name} does not exist."
+        raise Robotoy::NotValidMethodError
       end
     end
   end

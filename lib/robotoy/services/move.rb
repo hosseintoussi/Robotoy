@@ -9,6 +9,7 @@ module Robotoy
       end
 
       def perform
+        @robot.validate_if_placed
         send(@robot.orientation)
       end
 

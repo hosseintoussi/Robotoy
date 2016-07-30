@@ -6,6 +6,7 @@ require "robotoy/services/place"
 require "robotoy/services/report"
 require "robotoy/table"
 require "robotoy/robot"
+require "robotoy/game"
 
 module Robotoy
   # Your code goes here...

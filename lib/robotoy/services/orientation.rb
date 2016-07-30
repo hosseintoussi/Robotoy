@@ -19,7 +19,6 @@ module Robotoy
         raise NotValidOrientationError unless @orients.include?(orientation.downcase)
       end
 
-
       private
 
       def order_orients

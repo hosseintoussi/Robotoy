@@ -18,6 +18,7 @@ describe Robotoy::Services::Move do
     context "when prform is called on move with robot with a valid orientaiton" do
       it "calls the correct method based on robot orientation" do
         robot = double(Robotoy::Robot)
+        allow(robot).to receive(:validate_if_placed)
         allow(robot).to receive(:orientation).and_return(:north)
         table = double(Robotoy::Table)
         move = described_class.new(robot: robot, table: table)
@@ -31,6 +32,7 @@ describe Robotoy::Services::Move do
     context "when prform is called on move with robot with an invalid orientation" do
       it "calls method_missing" do
         robot = double(Robotoy::Robot)
+        allow(robot).to receive(:validate_if_placed)
         allow(robot).to receive(:orientation).and_return(:invalid)
         table = double(Robotoy::Table)
         move = described_class.new(robot: robot, table: table)

@@ -12,7 +12,7 @@ describe Robotoy::Services::Report do
 
         report = described_class.new(robot: robot)
 
-        expect(report.perform).to eq("0,0,north")
+        expect(report.perform).to eq("0,0,NORTH")
       end
     end
   end

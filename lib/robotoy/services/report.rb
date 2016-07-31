@@ -13,7 +13,7 @@ module Robotoy
       private
 
       def string
-        "#{@robot.x},#{@robot.y},#{@robot.orientation.upcase}"
+        puts "#{@robot.x},#{@robot.y},#{@robot.orientation.upcase}"
       end
     end
   end

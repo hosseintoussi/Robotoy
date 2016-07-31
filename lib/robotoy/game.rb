@@ -11,43 +11,37 @@ module Robotoy
 
     def perform(method, *args)
       send(method.downcase, *args.flatten)
+      @action.perform
+    rescue NotValidMoveError
+      puts "Not a valid place unfortunately"
+    rescue NotValidOrientationError
+      puts "Not a valid orientation unfortunately"
+    rescue NotPlacedError
+      puts "Not placed yet"
+    rescue NotValidMethodError
+      puts "Not a valid method"
     end
 
     private
 
     def place(x, y, orient)
-      placer = @place.new(robot: @robot, table: @table, x: x, y: y, orient: orient)
-      placer.perform
-    rescue NotValidMoveError
-      puts "Not a valid place unfortunately"
-    rescue NotValidOrientationError
-      puts "Not a valid orientation unfortunately"
+      @action = @place.new(robot: @robot, table: @table, x: x, y: y, orient: orient)
     end
 
     def move(*_args)
-      mover = @move.new(robot: @robot, table: @table)
-      mover.perform
-    rescue NotValidMoveError
-      puts "Not a valid move unfortunately"
-    rescue NotPlacedError
-      puts "Not placed yet"
+      @action = @move.new(robot: @robot, table: @table)
     end
 
     def left(*_args)
-      orientation = @orientation.new(robot: @robot, side: :left)
-      orientation.perform
+      @action = @orientation.new(robot: @robot, side: :left)
     end
 
     def right(*_args)
-      orientation = @orientation.new(robot: @robot, side: :right)
-      orientation.perform
+      @action = @orientation.new(robot: @robot, side: :right)
     end
 
     def report(*_args)
-      reporter = @report.new(robot: @robot)
-      puts reporter.perform
-    rescue NotPlacedError
-      puts "Not placed yet"
+      @action = @report.new(robot: @robot)
     end
 
     def method_missing(name, *args)

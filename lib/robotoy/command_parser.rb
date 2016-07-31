@@ -9,10 +9,9 @@ module Robotoy
       @commands.each_line do |command|
         begin
           next if command.strip.empty?
+          puts command
           set_params(command)
           @game.perform(@method, @args)
-        rescue NotValidMethodError
-          puts "Command does not seem valid"
         rescue
           puts "Something went wrong"
         end

@@ -2,7 +2,7 @@ module Robotoy
   class Table
     attr_reader :x, :y
 
-    def initialize(x: 5, y: 5)
+    def initialize(x: 4, y: 4)
       @x = x
       @y = y
     end

@@ -7,12 +7,8 @@ module Robotoy
         order_orients
       end
 
-      def right
-        @robot.orientation = @orients.rotate[0]
-      end
-
-      def left
-        @robot.orientation = @orients.rotate(-1)[0]
+      def perform(side:)
+        send(side)
       end
 
       def validate_orientation(orientation:)
@@ -20,6 +16,14 @@ module Robotoy
       end
 
       private
+
+      def right
+        @robot.orientation = @orients.rotate[0]
+      end
+
+      def left
+        @robot.orientation = @orients.rotate(-1)[0]
+      end
 
       def order_orients
         return unless @robot.orientation

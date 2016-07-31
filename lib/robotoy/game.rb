@@ -36,12 +36,12 @@ module Robotoy
 
     def left(*_args)
       orientation = @orientation.new(robot: @robot)
-      orientation.left
+      orientation.perform(side: :left)
     end
 
     def right(*_args)
       orientation = @orientation.new(robot: @robot)
-      orientation.right
+      orientation.perform(side: :right)
     end
 
     def report(*_args)

@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
 require "robotoy"
-Robotoy::CommandParser.new
+Robotoy::CommandParser.new.perform
 

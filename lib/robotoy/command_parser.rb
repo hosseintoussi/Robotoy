@@ -7,9 +7,15 @@ module Robotoy
 
     def perform
       @commands.each_line do |command|
-        next if command.strip.empty?
-        set_params(command)
-        game.perform(@method, @args)
+        begin
+          next if command.strip.empty?
+          set_params(command)
+          @game.perform(@method, @args)
+        rescue NotValidMethodError
+          puts "Command does not seem valid"
+        rescue
+          puts "Something went wrong"
+        end
       end
     end
 
@@ -17,8 +23,8 @@ module Robotoy
 
     def set_params(command)
       splitted = command.split(/\s+/)
-      @method = splitted.first.strip
-      @@args = splitted.last.split(',').strip(:&)
+      @method = splitted[0].strip
+      @args = splitted[1].split(',').map(&:strip) if splitted[1]
     end
   end
 end

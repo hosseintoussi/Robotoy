@@ -10,7 +10,7 @@ module Robotoy
     end
 
     def perform(method, *args)
-      send(method, *args)
+      send(method.downcase, *args.flatten)
     end
 
     private
@@ -19,18 +19,18 @@ module Robotoy
       placer = @place.new(robot: @robot, table: @table, x: x, y: y, orient: orient)
       placer.perform
     rescue NotValidMoveError
-      "Not a valid place unfortunately"
+      puts "Not a valid place unfortunately"
     rescue NotValidOrientationError
-      "Not a valid orientation unfortunately"
+      puts "Not a valid orientation unfortunately"
     end
 
     def move(*_args)
       mover = @move.new(robot: @robot, table: @table)
       mover.perform
     rescue NotValidMoveError
-      "Not a valid move unfortunately"
+      puts "Not a valid move unfortunately"
     rescue NotPlacedError
-      "Not placed yet"
+      puts "Not placed yet"
     end
 
     def left(*_args)
@@ -45,9 +45,9 @@ module Robotoy
 
     def report(*_args)
       reporter = @report.new(robot: @robot)
-      reporter.perform
+      puts reporter.perform
     rescue NotPlacedError
-      "Not placed yet"
+      puts "Not placed yet"
     end
 
     def method_missing(name, *args)

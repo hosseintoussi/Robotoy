@@ -7,6 +7,7 @@ require "robotoy/services/report"
 require "robotoy/table"
 require "robotoy/robot"
 require "robotoy/game"
+require "robotoy/command_parser"
 
 module Robotoy
   # Your code goes here...

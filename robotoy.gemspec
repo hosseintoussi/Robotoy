@@ -11,11 +11,10 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Toy Robot Ruby}
   spec.description   = %q{This gem is a simulation of a toy robot moving on a square tabletop.}
-  spec.homepage      = "https://github.com/hosseintoussi/rubotoy"
+  spec.homepage      = "https://github.com/hosseintoussi/robotoy"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = "exe"
   spec.executables   = ["robotoy"]
   spec.require_paths = ["lib"]
 

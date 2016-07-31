@@ -4,9 +4,9 @@ module Robotoy
       def initialize(robot:, table:, x:, y:, orient:)
         @robot = robot
         @table = table
-        @x = x
-        @y = y
-        @orient = orient
+        @x = x.to_i
+        @y = y.to_i
+        @orient = orient.downcase.to_sym
       end
 
       def perform

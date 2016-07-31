@@ -1,24 +1,26 @@
 module Robotoy
   module Services
     class Place
-      def initialize(robot:, table:, orientation:)
+      def initialize(robot:, table:, x:, y:, orient:)
         @robot = robot
         @table = table
-        @orientation = orientation
+        @x = x
+        @y = y
+        @orient = orient
       end
 
-      def perform(x:, y:, orientation:)
-        validate_placement(x, y, orientation)
-        @robot.x = x
-        @robot.y = y
-        @robot.orientation = orientation
+      def perform
+        validate_placement(@x, @y, @orient)
+        @robot.x = @x
+        @robot.y = @y
+        @robot.orientation = @orient
       end
 
       private
 
       def validate_placement(x, y, orientation)
         @table.validate_next_position(x: x, y: y)
-        @orientation.validate_orientation(orientation: orientation)
+        @robot.validate_orientation(orientation: orientation)
       end
     end
   end

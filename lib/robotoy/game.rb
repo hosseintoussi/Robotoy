@@ -16,9 +16,8 @@ module Robotoy
     private
 
     def place(x, y, orient)
-      orientation = @orientation.new(robot: @robot)
-      placer = @place.new(robot: @robot, table: @table, orientation: orientation)
-      placer.perform(x: x, y: y, orientation: orient)
+      placer = @place.new(robot: @robot, table: @table, x: x, y: y, orient: orient)
+      placer.perform
     rescue NotValidMoveError
       "Not a valid place unfortunately"
     rescue NotValidOrientationError
@@ -35,13 +34,13 @@ module Robotoy
     end
 
     def left(*_args)
-      orientation = @orientation.new(robot: @robot)
-      orientation.perform(side: :left)
+      orientation = @orientation.new(robot: @robot, side: :left)
+      orientation.perform
     end
 
     def right(*_args)
-      orientation = @orientation.new(robot: @robot)
-      orientation.perform(side: :right)
+      orientation = @orientation.new(robot: @robot, side: :right)
+      orientation.perform
     end
 
     def report(*_args)

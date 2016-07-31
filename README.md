@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/hosseintoussi/robotoy.svg?branch=master)](https://travis-ci.org/hosseintoussi/robotoy)
+[![Gem Version](https://badge.fury.io/rb/robotoy.svg)](https://badge.fury.io/rb/robotoy)
 # Robotoy
 - The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units.
 - There are no other obstructions on the table surface.

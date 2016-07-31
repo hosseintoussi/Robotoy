@@ -6,8 +6,8 @@ describe Robotoy::Table do
       it "has the default valus of x and y" do
         table = described_class.new
 
-        expect(table.x).to eq(5)
-        expect(table.y).to eq(5)
+        expect(table.x).to eq(4)
+        expect(table.y).to eq(4)
       end
     end
   end

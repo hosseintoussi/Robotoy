@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/hosseintoussi/rubotoy.svg?branch=master)](https://travis-ci.org/hosseintoussi/rubotoy)
+[![Build Status](https://travis-ci.org/hosseintoussi/robotoy.svg?branch=master)](https://travis-ci.org/hosseintoussi/robotoy)
 # Robotoy
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/robotoy`. To experiment with that code, run `bin/console` for an interactive prompt.

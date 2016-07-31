@@ -14,7 +14,7 @@ Install it yourself with:
 
 ## Usage
 
-After installation you can run the app by passin a file of commands( a sample file is provided in this repo `commands.txt`) to `robotoy` in terminal:
+After installation you can run the app by passing a file of commands( a sample file is provided in this repo `commands.txt`) to `robotoy` in terminal:
 
 ```
 robotoy path/to/commands.txt

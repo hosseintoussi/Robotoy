@@ -5,15 +5,19 @@ module Robotoy
         @robot = robot
       end
 
-      def perform(type: :string)
+      def perform(type: :console)
         @robot.validate_if_placed
         send(type)
       end
 
       private
 
+      def console
+        puts "Output: #{string}"
+      end
+
       def string
-        puts "Output: #{@robot.x},#{@robot.y},#{@robot.orientation.upcase}"
+        "#{@robot.x},#{@robot.y},#{@robot.orientation.upcase}"
       end
     end
   end

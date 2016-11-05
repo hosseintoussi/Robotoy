@@ -11,29 +11,28 @@ module Robotoy
 
     def perform(method, *args)
       send(method.downcase, *args.flatten)
-      @action.perform
     end
 
     private
 
     def place(x, y, orient)
-      @action = @place.new(robot: @robot, table: @table, x: x, y: y, orient: orient)
+      @place.new(robot: @robot, table: @table, x: x, y: y, orient: orient).perform
     end
 
     def move(*_args)
-      @action = @move.new(robot: @robot, table: @table)
+      @move.new(robot: @robot, table: @table).perform
     end
 
     def left(*_args)
-      @action = @orientation.new(robot: @robot, side: :left)
+      @orientation.new(robot: @robot, side: :left).perform
     end
 
     def right(*_args)
-      @action = @orientation.new(robot: @robot, side: :right)
+      @orientation.new(robot: @robot, side: :right).perform
     end
 
     def report(*_args)
-      @action = @report.new(robot: @robot)
+      @report.new(robot: @robot).perform
     end
 
     def method_missing(_name, *_args)

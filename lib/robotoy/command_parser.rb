@@ -12,8 +12,8 @@ module Robotoy
           puts command
           set_params(command)
           @game.perform(@method, @args)
-        rescue
-          puts "Something went wrong"
+        rescue Errors => e
+          puts e.message
         end
       end
     end

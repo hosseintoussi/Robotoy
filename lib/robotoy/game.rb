@@ -12,14 +12,8 @@ module Robotoy
     def perform(method, *args)
       send(method.downcase, *args.flatten)
       @action.perform
-    rescue NotValidMoveError
-      puts "Not a valid place unfortunately"
-    rescue NotValidOrientationError
-      puts "Not a valid orientation unfortunately"
-    rescue NotPlacedError
-      puts "Not placed yet"
-    rescue NotValidMethodError
-      puts "Not a valid method"
+    rescue Errors => e
+      puts e.message
     end
 
     private

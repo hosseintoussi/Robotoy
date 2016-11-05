@@ -13,7 +13,7 @@ module Robotoy
 
   class NotValidMoveError < Errors
     def message
-      "It wasn's a valisd move, unfortunately!"
+      "It wasn's a valid move, unfortunately!"
     end
   end
 

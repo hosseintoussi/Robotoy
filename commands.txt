@@ -2,7 +2,8 @@ move
 tests
 PLACE 0,0,NORTH
 MOVE
-MOVE
+report
+MOVE 2
 REPORT
 RIGHT
 MOVE

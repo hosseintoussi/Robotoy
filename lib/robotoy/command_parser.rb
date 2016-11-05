@@ -23,7 +23,7 @@ module Robotoy
     def set_params(command)
       splitted = command.split(/\s+/)
       @method = splitted[0].strip
-      @args = splitted[1].split(',').map(&:strip) if splitted[1]
+      @args = splitted[1] ? splitted[1].split(',').map(&:strip) : []
     end
   end
 end

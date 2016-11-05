@@ -1,19 +1,28 @@
 module Robotoy
   module Services
     class Report
-      def initialize(robot:)
+      def initialize(robot:, type:)
         @robot = robot
+        @type = type
       end
 
-      def perform(type: :string)
+      def perform
         @robot.validate_if_placed
-        send(type)
+        send(@type)
       end
 
       private
 
+      def console
+        puts "Output: #{string}"
+      end
+
       def string
-        puts "Output: #{@robot.x},#{@robot.y},#{@robot.orientation.upcase}"
+        "#{@robot.x},#{@robot.y},#{@robot.orientation.upcase}"
+      end
+
+      def method_missing(_name, *_args)
+        raise Robotoy::NotValidMethodError
       end
     end
   end

@@ -31,7 +31,7 @@ describe Robotoy::Game do
 
         game = described_class.new(robot: robot, table: table, move: move, place: place, orientation: orientation, report: report)
 
-        expect{ game.perform(:invalid) }.not_to raise_error(Robotoy::NotValidMethodError)
+        expect{ game.perform(:invalid) }.to raise_error(Robotoy::NotValidMethodError)
       end
     end
   end

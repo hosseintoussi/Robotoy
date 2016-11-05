@@ -6,10 +6,9 @@ describe Robotoy::Services::Move do
       it "sets x_range and y_range" do
         robot = double(Robotoy::Robot)
         table = double(Robotoy::Table)
-        move = described_class.new(robot: robot, table: table)
+        move = described_class.new(robot: robot, table: table, range: 1)
 
-        expect(move.instance_variable_get("@x_range")).to eq(1)
-        expect(move.instance_variable_get("@y_range")).to eq(1)
+        expect(move.instance_variable_get("@range")).to eq(1)
       end
     end
   end
@@ -21,7 +20,7 @@ describe Robotoy::Services::Move do
         allow(robot).to receive(:validate_if_placed)
         allow(robot).to receive(:orientation).and_return(:north)
         table = double(Robotoy::Table)
-        move = described_class.new(robot: robot, table: table)
+        move = described_class.new(robot: robot, table: table, range: 1)
 
         expect(move).to receive(:north)
 
@@ -35,7 +34,7 @@ describe Robotoy::Services::Move do
         allow(robot).to receive(:validate_if_placed)
         allow(robot).to receive(:orientation).and_return(:invalid)
         table = double(Robotoy::Table)
-        move = described_class.new(robot: robot, table: table)
+        move = described_class.new(robot: robot, table: table, range: 1)
 
         expect{ move.perform }.to raise_error(Robotoy::NotValidMethodError)
       end

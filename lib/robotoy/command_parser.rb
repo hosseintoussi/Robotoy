@@ -12,8 +12,8 @@ module Robotoy
           puts command
           set_params(command)
           @game.perform(@method, @args)
-        rescue
-          puts "Something went wrong"
+        rescue Errors => e
+          puts e.message
         end
       end
     end
@@ -23,7 +23,7 @@ module Robotoy
     def set_params(command)
       splitted = command.split(/\s+/)
       @method = splitted[0].strip
-      @args = splitted[1].split(',').map(&:strip) if splitted[1]
+      @args = splitted[1] ? splitted[1].split(',').map(&:strip) : []
     end
   end
 end

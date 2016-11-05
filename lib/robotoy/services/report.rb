@@ -19,6 +19,10 @@ module Robotoy
       def string
         "#{@robot.x},#{@robot.y},#{@robot.orientation.upcase}"
       end
+
+      def method_missing(_name, *_args)
+        raise Robotoy::NotValidMethodError
+      end
     end
   end
 end

@@ -1,11 +1,10 @@
 module Robotoy
   module Services
     class Move
-      def initialize(robot:, table:, x_range: 1, y_range: 1)
+      def initialize(robot:, table:, range: 1)
         @robot = robot
         @table = table
-        @x_range = x_range
-        @y_range = y_range
+        @range = range
       end
 
       def perform
@@ -16,23 +15,23 @@ module Robotoy
       private
 
       def north
-        @table.validate_next_position(y: @robot.y + @y_range)
-        @robot.y += @y_range
+        @table.validate_next_position(y: @robot.y + @range)
+        @robot.y += @range
       end
 
       def south
-        @table.validate_next_position(y: @robot.y - @y_range)
-        @robot.y -= @y_range
+        @table.validate_next_position(y: @robot.y - @range)
+        @robot.y -= @range
       end
 
       def east
-        @table.validate_next_position(x: @robot.x + @x_range)
-        @robot.x += @x_range
+        @table.validate_next_position(x: @robot.x + @range)
+        @robot.x += @range
       end
 
       def west
-        @table.validate_next_position(x: @robot.x - @x_range)
-        @robot.x -= @x_range
+        @table.validate_next_position(x: @robot.x - @range)
+        @robot.x -= @range
       end
 
       def method_missing(_name, *_args)

@@ -8,8 +8,7 @@ describe Robotoy::Services::Move do
         table = double(Robotoy::Table)
         move = described_class.new(robot: robot, table: table)
 
-        expect(move.instance_variable_get("@x_range")).to eq(1)
-        expect(move.instance_variable_get("@y_range")).to eq(1)
+        expect(move.instance_variable_get("@range")).to eq(1)
       end
     end
   end

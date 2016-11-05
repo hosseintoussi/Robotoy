@@ -35,7 +35,7 @@ module Robotoy
         @robot.x -= @x_range
       end
 
-      def method_missing(name, *args)
+      def method_missing(_name, *_args)
         raise Robotoy::NotValidMethodError
       end
     end

@@ -36,7 +36,7 @@ module Robotoy
       @action = @report.new(robot: @robot)
     end
 
-    def method_missing(name, *args)
+    def method_missing(_name, *_args)
       raise Robotoy::NotValidMethodError
     end
   end

@@ -13,13 +13,13 @@ module Robotoy
 
   class NotValidMoveError < Errors
     def message
-      "It wasn's a valid move, unfortunately!"
+      "It wasn't a valid move, unfortunately!"
     end
   end
 
   class NotPlacedError < Errors
     def message
-      "Your Robot could not be placed!"
+      "Your Robot is not placed yet!"
     end
   end
 

@@ -32,7 +32,7 @@ module Robotoy
     end
 
     def report(type = :console)
-      @report.new(robot: @robot).perform(type: type)
+      @report.new(robot: @robot, type: type).perform
     end
 
     def method_missing(_name, *_args)

@@ -1,13 +1,14 @@
 module Robotoy
   module Services
     class Report
-      def initialize(robot:)
+      def initialize(robot:, type:)
         @robot = robot
+        @type = type
       end
 
-      def perform(type: :console)
+      def perform
         @robot.validate_if_placed
-        send(type)
+        send(@type)
       end
 
       private

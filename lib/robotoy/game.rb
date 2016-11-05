@@ -19,8 +19,8 @@ module Robotoy
       @place.new(robot: @robot, table: @table, x: x, y: y, orient: orient).perform
     end
 
-    def move(*_args)
-      @move.new(robot: @robot, table: @table).perform
+    def move(range)
+      @move.new(robot: @robot, table: @table, range: range || 1).perform
     end
 
     def left(*_args)
@@ -31,8 +31,8 @@ module Robotoy
       @orientation.new(robot: @robot, side: :right).perform
     end
 
-    def report(*_args)
-      @report.new(robot: @robot).perform
+    def report(type = :console)
+      @report.new(robot: @robot).perform(type: type)
     end
 
     def method_missing(_name, *_args)

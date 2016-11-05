@@ -12,8 +12,6 @@ module Robotoy
     def perform(method, *args)
       send(method.downcase, *args.flatten)
       @action.perform
-    rescue Errors => e
-      puts e.message
     end
 
     private

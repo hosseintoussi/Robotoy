@@ -22,7 +22,7 @@ describe Robotoy::CommandParser do
 
         command =  described_class.new(game: game, commands: commands)
 
-        expect(game).to receive(:perform).with("MOVE", nil)
+        expect(game).to receive(:perform).with("MOVE", [])
 
         command.perform
       end

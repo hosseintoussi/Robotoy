@@ -19,15 +19,15 @@ module Robotoy
       @place.new(robot: @robot, table: @table, x: x, y: y, orient: orient).perform
     end
 
-    def move(range)
-      @move.new(robot: @robot, table: @table, range: range || 1).perform
+    def move(range = 1)
+      @move.new(robot: @robot, table: @table, range: range).perform
     end
 
-    def left(*_args)
+    def left
       @orientation.new(robot: @robot, side: :left).perform
     end
 
-    def right(*_args)
+    def right
       @orientation.new(robot: @robot, side: :right).perform
     end
 

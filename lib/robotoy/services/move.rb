@@ -1,10 +1,10 @@
 module Robotoy
   module Services
     class Move
-      def initialize(robot:, table:, range: 1)
+      def initialize(robot:, table:, range:)
         @robot = robot
         @table = table
-        @range = range
+        @range = range.to_i
       end
 
       def perform

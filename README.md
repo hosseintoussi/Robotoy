@@ -22,6 +22,7 @@ After installation you can run the app by passing a file of commands( a sample f
 ```
 robotoy path/to/commands.txt
 ```
+A web interface of this gem can be found here: https://github.com/hosseintoussi/robotoy_rails
 
 ## Development
 
